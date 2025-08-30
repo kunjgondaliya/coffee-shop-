@@ -1,0 +1,634 @@
+@import url("https://fonts.googleapis.com/css2?family=Lemon&family=Poppins:wght@500&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.logo img {
+    height: 4.2rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 12vh;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.navlist {
+    display: flex;
+    gap: 2.5rem;
+
+}
+
+.navlist li {
+    list-style: none;
+}
+
+.navlist a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: .08rem;
+}
+
+.hero {
+    display: flex;
+}
+
+.hero .left {
+    background-color: #2c1e1e;
+    padding-left: 3rem;
+
+
+}
+
+.hero .right {
+    background-color: #7c573c;
+    justify-content: center;
+
+
+
+}
+
+.hero .hero_split {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+
+.navlist .slider {
+    background-color: rgba(255, 255, 255, 0.345);
+    width: 6rem;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    right: 425px;
+    border-top: .3rem solid #2c1e1e;
+    border-radius: 0 0 2rem 2rem;
+    backdrop-filter: blue(.5rem);
+    z-index: -1;
+    transition: .5s ease-in-out;
+
+}
+
+
+.navlist li:nth-child(2):hover~.slider {
+    right: 320px;
+}
+
+.navlist li:nth-child(3):hover~.slider {
+    right: 220px;
+}
+
+.navlist li:nth-child(4):hover~.slider {
+    right: 105px;
+}
+
+.navlist li:nth-child(5):hover~.slider {
+    right: -10px;
+}
+
+.left .content {
+    color: white;
+}
+
+.content h1 {
+    font-size: 5rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: .04rem white;
+    letter-spacing: .2rem;
+    font-family: "Lemon", cursive;
+}
+
+.content p {
+    color: rgba(236, 229, 229, 0.352);
+    font-size: 1.2rem;
+    max-width: 80%;
+    margin: 1rem 0;
+    line-height: 1.7rem;
+}
+
+.content button {
+    background: radial-gradient(at top left, #5a4740, #2c1e1e);
+    padding: 1rem 3rem;
+    border: .1rem solid rgba(255, 255, 255, 0.286);
+    font-size: 1.3rem;
+    color: white;
+    border-radius: 4rem;
+    letter-spacing: .1rem;
+}
+
+.content button:hover {
+    background: radial-gradient(at bottom right, #5a4740, #2c1e1e);
+
+}
+
+.right img {
+    height: 65%;
+    padding-left: 3rem;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.middle .circle {
+    width: 10rem;
+    height: 10rem;
+    background-color: white;
+    border-radius: 8rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+}
+
+.middle .circle:nth-child(1) {
+    background-image: url(image/coffee\ powder.jpg);
+    background-size: 350%;
+
+}
+
+.middle .circle:nth-child(2) {
+    background-image: url(image/coffee\ beans.jpg);
+    margin: 2rem 0;
+    background-size: 100%;
+}
+
+.middle .circle:nth-child(3) {
+    background-image: url(image/coffee\ leaves.png);
+    background-size: 250%;
+
+}
+
+.middle .circle::before {
+    content: "";
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8rem;
+    border: .2rem dashed white;
+    padding: .4rem;
+
+}
+
+
+/* ===== Menu Page Styles ===== */
+
+body.menu-page {
+    background-color: #f7f3ef;
+}
+
+/* Give navbar a readable background on the menu page only */
+body.menu-page .navbar {
+    background-color: rgba(44, 30, 30, 0.9);
+    padding: 0 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.menu-hero {
+    margin-top: 12vh;
+    /* account for fixed navbar */
+    height: 42vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('image/coffee cup.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.menu-hero h1 {
+    font-size: 3rem;
+    letter-spacing: 0.08rem;
+}
+
+.menu-hero p {
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+.menu-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto 4rem auto;
+}
+
+.menu-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c1e1e;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.menu-card {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+}
+
+.menu-card img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.menu-card h3 {
+    color: #2c1e1e;
+    font-size: 1.2rem;
+}
+
+.menu-card p.desc {
+    font-size: 0.95rem;
+    color: #6d5c54;
+    margin: 0.35rem 0 0.75rem 0;
+}
+
+.menu-card .price {
+    font-weight: bold;
+    color: #7c573c;
+    font-size: 1.05rem;
+}
+
+/* ===== Services Page Styles ===== */
+body.services-page {
+    background-color: #f7f3ef;
+}
+
+body.services-page .navbar {
+    background-color: rgba(44, 30, 30, 0.9);
+    padding: 0 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.services-hero {
+    margin-top: 12vh;
+    height: 38vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('image/coffee%20beans.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.services-hero h1 {
+    font-size: 3rem;
+    letter-spacing: 0.08rem;
+}
+
+.services-hero p {
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+.services-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto 4rem auto;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.seller {
+    color: #2c1e1e;
+    font-size: 2rem;
+    margin-left: 10%;
+    padding-top: 2rem;
+    font-family: "Lemon", cursive;
+    margin-bottom: 1rem;
+
+}
+
+.service-card {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+}
+
+.service-card .icon {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    background: radial-gradient(at top left, #5a4740, #2c1e1e);
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.service-card h3 {
+    color: #2c1e1e;
+    font-size: 1.2rem;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #6d5c54;
+    margin-top: 0.35rem;
+}
+
+/* product section */
+
+
+
+body.product-page {
+    background-color: #f5efe9;
+}
+
+body.product-page .navbar {
+    background-color: rgba(44, 30, 30, 0.9);
+    padding: 0 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.product-hero {
+    margin-top: 12vh;
+    height: 40vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('image/coffee beans.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.product-hero h1 {
+    font-size: 3rem;
+    letter-spacing: 0.08rem;
+}
+
+.product-hero p {
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+.product-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto 4rem auto;
+}
+
+
+/* contact section */
+body.contact-page {
+    background-color: #f7f3ef;
+}
+
+body.contact-page .navbar {
+    background-color: rgba(44, 30, 30, 0.9);
+    padding: 0 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.contact-hero {
+    margin-top: 12vh;
+    height: 38vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), url('image/coffee%20beans.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    letter-spacing: 0.08rem;
+}
+
+.contact-hero p {
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+
+.detail.center {
+    text-align: center;
+}
+
+.contact-form {
+    width: min(820px, 96%);
+    margin: 1.2rem auto 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: #1f1f1f;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 10px;
+    padding: .9rem 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #5D89EE;
+}
+
+.contact-socials {
+    margin-top: 1.6rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.contact-socials a {
+    color: #e5e0e0;
+    font-size: 1.2rem;
+}
+
+.contact-socials a:hover {
+    color: #5D89EE;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    .about-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* payment section */
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: white;
+    
+}
+
+.container form {
+    width: 700px;
+    padding: 40px;
+    background: rgb(146, 33, 33);
+    border-radius: 10px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 20px rgba(170, 38, 38, 0.08);
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+  
+.container form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+} 
+
+form .row {
+    display: flex;
+    gap: 15px;
+}
+
+.row .column {
+    flex: 1 1 250px;
+}
+
+.column .title {
+    font-size: 20px;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.column .input-box {
+    margin: 15px 0;
+
+}
+
+.input-box span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.column .flex {
+    display: flex;
+    gap: 15px;
+}
+
+.flex .input-box {
+    margin-top: 5px;
+
+}
+
+.input-box img {
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+form .btn {
+    width: 100%;
+    padding: 1rem 3rem;
+    background: radial-gradient(at top left, #5a4740, #2c1e1e);
+    border: .2rem solid rgba(255, 255, 255, 0.286);
+    font-size: 1.3rem;
+    outline: none;
+    border-radius: 4rem;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: .5s;
+    letter-spacing: .1rem;
+}
+
+form .btn:hover {
+    background: radial-gradient(at bottom right, #5a4740, #2c1e1e);
+}
